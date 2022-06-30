@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+
+name: 'terraform fmt'
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Terraform
+      run: |
+        brew install tfenv
+        tfenv install
+    - name: fmt
+      run: terraform fmt -check -diff -recursive
