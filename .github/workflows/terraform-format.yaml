@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    e285ba8a0b6e99c2d2517479464f1e462d42bd12
+    - name: setup terraform
       run: |
         brew install tfenv
         tfenv install
