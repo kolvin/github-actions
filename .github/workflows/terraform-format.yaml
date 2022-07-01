@@ -4,13 +4,13 @@ on:
 name: 'terraform fmt'
 
 jobs:
-  setup:
+  terraform fmt:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Setup Terraform
+    - name: setup terraform
       run: |
         brew install tfenv
         tfenv install
-    - name: fmt
+    - name: terraform fmt
       run: terraform fmt -check -diff -recursive
