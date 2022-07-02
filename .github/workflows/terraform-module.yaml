@@ -2,8 +2,8 @@ on:
   workflow_call:
 
 jobs:
-  init:
-    name: terragrunt init
+  moudle:
+    name: terraform module
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -12,5 +12,9 @@ jobs:
         brew install tfenv warrensbox/tap/tgswitch
         tfenv install
         tgswitch
-    - name: terraform init
+    - name: terraform fmt
+      run: terraform fmt -check -diff
+    - name: terragrunt init
       run: terragrunt init
+    - name: terragrunt validate
+      run: terragrunt validate
