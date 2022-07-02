@@ -2,8 +2,8 @@ on:
   workflow_call:
 
 jobs:
-  module-ci:
-    name: moud
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
